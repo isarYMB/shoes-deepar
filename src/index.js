@@ -5,7 +5,7 @@ console.log("Deepar version: " + deepar.version);
 
 // Top-level await is not supported.
 // So we wrap the whole code in an async function that is called immediatly.
-(async function() {
+(async function () {
 
   // Resize the canvas according to screen size.
   const canvas = document.getElementById('deepar-canvas');
@@ -15,23 +15,10 @@ console.log("Deepar version: " + deepar.version);
   // All the effects are in the public/effects folder.
   // Here we define the order of effect files.
   const effectList = [
-    'effects/viking_helmet.deepar',
-    'effects/MakeupLook.deepar',
-    'effects/Split_View_Look.deepar',
-    'effects/flower_face.deepar',
-    'effects/Stallone.deepar',
-    'effects/galaxy_background_web.deepar',
-    'effects/Humanoid.deepar',
-    'effects/Neon_Devil_Horns.deepar',
-    'effects/Ping_Pong.deepar',
-    'effects/Pixel_Hearts.deepar',
-    'effects/Snail.deepar',
-    'effects/Hope.deepar',
-    'effects/Vendetta_Mask.deepar',
-    'effects/Fire_Effect.deepar',
-    'effects/Elephant_Trunk.deepar'
+    'effects/shoes.deepar',
+
   ];
-  
+
   // Initialize DeepAR with an effect file.
   const deepAR = await deepar.initialize({
     licenseKey: 'your_license_key_goes_here',
@@ -42,7 +29,7 @@ console.log("Deepar version: " + deepar.version);
 
   // Hide the loading screen.
   document.getElementById("loader-wrapper").style.display = "none";
-  
+
   // Position the carousel to cover the canvas
   if (window.innerWidth > window.innerHeight) {
     const width = Math.floor(window.innerHeight * 0.66);
@@ -50,7 +37,7 @@ console.log("Deepar version: " + deepar.version);
     carousel.style.width = width + 'px';
     carousel.style.marginLeft = (window.innerWidth - width) / 2 + "px";
   }
-  
+
   // Configure carousel.
   $(document).ready(() => {
     $('.effect-carousel').slick({
@@ -61,7 +48,7 @@ console.log("Deepar version: " + deepar.version);
       accessibility: false,
       variableWidth: true,
     });
-  
+
     // Switch the effect when carusel moves.
     $('.effect-carousel').on('afterChange', async function (event, slick, currentSlide) {
       await deepAR.switchEffect(effectList[currentSlide]);
