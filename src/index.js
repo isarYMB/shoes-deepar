@@ -21,7 +21,7 @@ console.log("Deepar version: " + deepar.version);
 
   // Initialize DeepAR with an effect file.
   const deepAR = await deepar.initialize({
-    licenseKey: 'your_license_key_goes_here',
+    licenseKey: '04b77737ecf43aa5215387c2f6a5cdb9b8e9600c64eeb909042f43fdf9680ca22fda1812f20e3855',
     canvas: canvas,
     rootPath: "./deepar-resources", // See webpack.config.js and package.json build script.
     effect: effectList[0]
