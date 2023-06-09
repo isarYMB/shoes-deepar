@@ -8,4 +8,4 @@
 - Open the terminal in the root of the project
   - Run `npm install`
   - Run `npm run dev`
-  - If the browser doesn't open automatically, open http://localhost:8888
+  - If the browser doesn't open automatically, open http://localhost:8080
